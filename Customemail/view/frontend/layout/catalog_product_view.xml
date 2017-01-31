@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="2columns-right" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <script src="Magento_Catalog::js/jquery.zoom.min.js"/>
+    </head>
+    <body>
+		<!--<referenceContainer name="product.info.main">
+           <block class="Magento\Catalog\Block\Product\View" name="enquiry.form" template="Ocodewire_Customemail::enquiryform.phtml" after="product.info"/>
+		</referenceContainer>-->
+		<referenceBlock name="product.info.details">
+			<block class="Magento\Catalog\Block\Product\View" name="enquiry.tab" as="moreinfo" template="Ocodewire_Customemail::enquiryform.phtml" group="detailed_info" >
+				<arguments>
+				<argument translate="true" name="title" xsi:type="string">Request More Info</argument>
+				</arguments>
+			</block>
+		</referenceBlock>
+    </body>
+</page>

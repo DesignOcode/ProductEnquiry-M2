@@ -1,0 +1,29 @@
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!--@subject Customer Product Enquiry Email For {{var store.getFrontendName()}} Store @-->
+
+{{template config_path="design/email/header_template"}}
+
+<table>
+    <tr class="email-intro">
+        <td>
+            <p class="greeting">{{trans "%customer_name," customer_name="Hello Admin"}}</p>
+            <p>
+                {{trans 'There is an enquiry for product <a href="%your_product_link">View Product</a>.' your_product_link=$your_product_link |raw}}
+            </p>
+            <p><strong>Enquiry Details :</strong></p>
+            <p>                
+                <p>{{trans "Name: %name" name=$your_name}}</p>
+				<p>{{trans "Email: %email" email=$your_email}}</p>
+				<p>{{trans "Phone Number: %your_phone" your_phone=$your_phone}}</p>
+				<p>{{trans "Company: %your_company" your_company=$your_company}}</p>
+
+				<p>{{trans "Comment: %comment" comment=$your_message}}</p>
+            </p>
+        </td>
+    </tr>
+</table>
